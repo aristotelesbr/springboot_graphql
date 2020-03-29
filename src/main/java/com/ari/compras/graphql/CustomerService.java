@@ -3,10 +3,12 @@ package com.ari.compras.graphql;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
- * CustomerServices
+ * CustomerService
  */
+@Service
 public class CustomerService {
 
   @Autowired
