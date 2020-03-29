@@ -110,6 +110,13 @@
 			<version>5.0.2</version>
 		</dependency>
 		<!-- End Grapqh Dependencies -->
+
+		<!-- Playground -->
+		<dependency>
+			<groupId>com.graphql-java-kickstart</groupId>
+			<artifactId>playground-spring-boot-autoconfigure</artifactId>
+			<version>6.0.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
