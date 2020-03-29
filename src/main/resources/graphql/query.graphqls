@@ -1,4 +1,14 @@
+type Customer {
+  id: ID
+  name: String
+  email: String
+}
+
 type Query {
+  customer(id: ID): Customer
+
+  customers: [Customer]
+
   hello: String
 
   soma(a: Int, b: Int): Int

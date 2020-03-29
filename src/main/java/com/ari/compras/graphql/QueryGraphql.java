@@ -1,7 +1,6 @@
-package com.ari.compras;
+package com.ari.compras.graphql;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
-
 import org.springframework.stereotype.Component;
 
 /**
