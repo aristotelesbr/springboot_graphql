@@ -31,4 +31,13 @@ public class CustomerGraphql implements GraphQLQueryResolver, GraphQLMutationRes
     Customer customer = new Customer(id, name, email);
     return repoCustomer.save(customer);
   }
+
+  @Transactional
+  public Boolean removeCustomer(Long id) {
+    if (repoCustomer.findById(id).isPresent()) {
+      repoCustomer.deleteById(id);
+      return true;
+    }
+    return false;
+  }
 }
