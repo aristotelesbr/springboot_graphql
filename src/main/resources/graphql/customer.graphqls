@@ -1,14 +1,21 @@
 type Customer {
-  id: ID
-  name: String
-  email: String
+  id: ID!
+  name: String!
+  email: String!
 }
+
+input CustomerInput {
+  id: ID
+  name: String!
+  email: String!
+}
+
 extend type Query {
-  customer(id: ID): Customer
-  customers: [Customer]
+  customer(id: ID!): Customer
+  customers: [Customer]!
 }
 
 extend type Mutation {
-  saveCustomer(id: ID, name: String, email: String): Customer
-  removeCustomer(id: ID): Boolean
+  saveCustomer(customer: CustomerInput!): Customer!
+  removeCustomer(id: ID!): Boolean!
 }

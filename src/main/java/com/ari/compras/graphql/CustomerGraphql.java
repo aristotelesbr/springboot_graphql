@@ -5,6 +5,7 @@ import java.util.List;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,8 +26,14 @@ public class CustomerGraphql implements GraphQLQueryResolver, GraphQLMutationRes
     return customerService.findAll();
   }
 
-  public Customer saveCustomer(Long id, String name, String email) {
-    Customer customer = new Customer(id, name, email);
+  public Customer saveCustomer(CustomerInput input) {
+    // Customer customer = new Customer();
+    // customer.setId(input.getId());
+    // customer.setEmail(input.getEmail());
+    // customer.setName(input.getName());
+
+    ModelMapper modelMaper = new ModelMapper();
+    Customer customer = modelMaper.map(input, Customer.class);
     return customerService.save(customer);
   }
 
