@@ -1,4 +1,4 @@
-package com.ari.compras;
+package com.ari.compras.graphql;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
