@@ -12,4 +12,5 @@ input ProductInput {
 
 extend type Query {
   products: [Product]!
+  product(id: ID!): Product
 }

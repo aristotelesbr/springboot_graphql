@@ -20,4 +20,8 @@ public class ProductGraphql implements GraphQLQueryResolver, GraphQLMutationReso
   public List<Product> products() {
     return service.findAll();
   }
+
+  public Product product(Long id) {
+    return service.findById(id);
+  }
 }
