@@ -1,4 +1,4 @@
-package com.ari.compras.graphql;
+package com.ari.compras.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,17 +11,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * Product
+ * Notation @Data replaces Getters and Setters
+ * Notation @AllArgsConstructor create constructor with all attributes
+ * Notation @NoArgsConstructor create constructor less attributes
+ */
+
+/**
+ * Customer
  */
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "products")
-public class Product {
+@Entity
+@Table(name = "customers")
+public class Customer {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
-  private Float price;
+  private String email;
 }

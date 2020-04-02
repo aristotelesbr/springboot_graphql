@@ -1,11 +1,11 @@
-package com.ari.compras.graphql;
+package com.ari.compras.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * ProductRepository
+ * CustomerRepository
  */
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
 }

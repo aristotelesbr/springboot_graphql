@@ -2,6 +2,8 @@ package com.ari.compras.graphql;
 
 import java.util.List;
 
+import com.ari.compras.domain.Customer;
+import com.ari.compras.domain.CustomerService;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 
@@ -16,28 +18,23 @@ import org.springframework.stereotype.Component;
 public class CustomerGraphql implements GraphQLQueryResolver, GraphQLMutationResolver {
 
   @Autowired
-  private CustomerService customerService;
+  private CustomerService service;
 
   public Customer customer(Long id) {
-    return customerService.findById(id);
+    return service.findById(id);
   }
 
   public List<Customer> customers() {
-    return customerService.findAll();
+    return service.findAll();
   }
 
   public Customer saveCustomer(CustomerInput input) {
-    // Customer customer = new Customer();
-    // customer.setId(input.getId());
-    // customer.setEmail(input.getEmail());
-    // customer.setName(input.getName());
-
     ModelMapper modelMaper = new ModelMapper();
     Customer customer = modelMaper.map(input, Customer.class);
-    return customerService.save(customer);
+    return service.save(customer);
   }
 
   public Boolean removeCustomer(Long id) {
-    return customerService.deleteById(id);
+    return service.deleteById(id);
   }
 }

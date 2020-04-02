@@ -2,6 +2,8 @@ package com.ari.compras.graphql;
 
 import java.util.List;
 
+import com.ari.compras.domain.Product;
+import com.ari.compras.domain.ProductService;
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 

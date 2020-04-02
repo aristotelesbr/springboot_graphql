@@ -1,4 +1,4 @@
-package com.ari.compras.graphql;
+package com.ari.compras.domain;
 
 import java.util.List;
 import javax.transaction.Transactional;
