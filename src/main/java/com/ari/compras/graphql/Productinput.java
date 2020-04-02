@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Productinput {
+public class ProductInput {
   private Long id;
   private String name;
   private Float price;
